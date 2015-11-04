@@ -1,16 +1,12 @@
-<h1>Profile</h1>
+<h2>Profile</h2>
 
-<h3>Add/Change Avatar</h3>
-<form action="/" method="POST" enctype="multipart/form-data">
-	<input type="file" name="myFile">
-	<input type="submit"></form><br><br>
+<small>Add/Change Avatar</small>
+	<form action="/" method="POST" enctype="multipart/form-data">
+		<input type="file" name="myFile">
+		<input type="submit">
+	</form><br><br>
 
-	<button><a href="/music">Music</a></button>
-
-	<% myData.response.artists.forEach(function(musicresults) { %>
-    	<h2><%= music.name %></h2></div>
-
-<% }); %>
+	<button><a href="/music">Add new Music</a></button>
 
 <!-- //render on the page
  -->
