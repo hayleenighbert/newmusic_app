@@ -72,6 +72,7 @@ app.get('/url', function(req, res){
 // Include our controllers
 app.use("/", require("./controllers/login"));
 app.use("/auth", require("./controllers/auth"));
+app.use("/music", require("./controllers/music"));
 
 app.listen(3000, function() {
 	console.log('3000 here');
