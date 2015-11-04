@@ -7,22 +7,23 @@ router.post('/', function(req, res) {
 	var path = req.body;
 	db.favorite.findOrCreate({
 		where: {
-			key: path.key,
+			id: path.id,
 			artist: path.artist,
+			album: path.album,
 			song: path.song
 		}
 	}).spread(function(favorite, created) {
 		console.log(favorite.get());
-		res.redirect('/favorite');
+		res.redirect('/profile');
 	});
 
 });
 
 router.get('/', function(req, res) {
 	db.favorite.findAll({
-		order: 'title ASC'
+		order: 'artist ASC'
 	}).then(function(favorites) {
-		res.render('/profile', {favorite: favorites});
+		res.render('profile', {favorite: favorites});
 	});
 });
 

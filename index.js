@@ -22,7 +22,7 @@ app.use(session({
 
 app.use(function(req, res, next) {
 	if(req.session.user) {
-		db.user.findById(req.session.user).then(function(user) {
+		db.user.findById(2).then(function(user) {
 			if (user) {
 				req.currentUser = user;
 				next();
@@ -74,6 +74,7 @@ app.use("/", require("./controllers/login"));
 app.use("/auth", require("./controllers/auth"));
 app.use("/music", require("./controllers/music"));
 // app.use("/profile", require("./controllers/profile"))
+app.use("/favorite", require("./controllers/favorite"))
 
 app.listen(3000, function() {
 	console.log('3000 here');

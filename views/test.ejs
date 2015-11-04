@@ -1,53 +1,8 @@
- <script type="underscore/template" id="result">
-      <div class="result">
-        <h1><%=name%> </h1>
-        <ul>
-          <% _.each(artists, function(artist){ %>
-            <li><a href="" class="similar-artist"><%=artist.name%></a> <span>&raquo;</span></li>
-          <% }); %>
-        </ul>
-      </div>
-      <div class="result-pad">
-      </div>
-    </script>
-    <script type="underscore/template" id="artistinfo">
-      <div class="span-8" id="bio">
-        <%=bio%> <% if(bio){ %><a href="<%=bio_url%>">more</a><% } %>
-      </div>
-      <div class="span-12 terms">
-        <p><%= similars%></p>
-      </div>
-      <div class="span-4 last terms">
-        <p>Words in <span>blue</span> are keywords that <%=name%>
-          share(s) with <%= parentname%></p>
-      </div>
-    </script>
+<% myData.response.artists.forEach(function(item){ %>
+ <div class="container">
+      <div class="row">
+      <h4><%= item.name %></h4>
+    </div>
 
-
-          <input class="title" type="hidden" value="<%- info.Title%>" name="title">
-      <input class="btn btn-info" type="submit" value="Add to Favorites" >
-
-
-  <% myData.response.artists.forEach(function(musicresults) { %>
-      <h2><%= music.name %></h2></div>
-
-
-
-<ul class="collection">
-  <li class="collection-item avatar">
-    <img src="images/yuna.jpg" alt="" class="circle">
-    <span class="title">Title</span>
-    <p>First Line <br>
-      Second Line
-    </p>
-    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-  </li>
-  <li class="collection-item avatar">
-    <i class="mdi-file-folder circle"></i>
-    <span class="title">Title</span>
-    <p>First Line <br>
-      Second Line
-    </p>
-    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-  </li>
-</ul>
+ </div>
+<% }); %>
