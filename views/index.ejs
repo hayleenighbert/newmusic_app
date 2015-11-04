@@ -1,3 +1,24 @@
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#div1").fadeIn(2000);
+        $("#div2").fadeIn(4000);
+        $("#div3").fadeIn(3000);
+    });
+});
+</script>
+
+<button type="button" class="waves-effect waves-light btn-large"><i class="small mdi-file-album right">About nu.notes</i></button>
+
+<div id="div1" style="width:300px;height:100px;display:none;background-color:black;">
+<h3>about nu.notes</h3>
+</div>
+
+<div id="div2" style="width:300px;height:150px;display:none;background-color:black;">
+<h4>Bored of the same music?</h4>
+nu.notes is a music sharing app used to introduce new music to friends.
+</div>
+
 <!-- <nav>
 	<div class="nav-wrapper blue-grey darken-3">
 		<a href="#" class="brand-logo center">nu.notes</a>

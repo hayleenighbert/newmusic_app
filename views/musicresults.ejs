@@ -1,13 +1,11 @@
-		<h1>Music</h1><br />
-		<h2>Matching Keyword "<%=searchTerm %>"</h2>
-	</div>
+	<h1>Music</h1><br />
+		<h2>Matching Keyword ""</h2>
+
 	<br><br>
 
-
-	<div class="well">
-		<% myData.forEach(function(item){ %>
-		<% var ID = item.; %>
-	<a href=<%= ID %> ><h2><%= item.Title %></h2></a>
+		<% myData.response.artists.forEach(function(item){ %>
+		<% var ID = item.name %>
+	<a href=<%= ID %> ><h2><%= item.name %></h2></a>	<button type="button" class="waves-effect waves-teal btn-flat"><i class="mdi-content-add"></i></button>
 
 <% }) %>
 

@@ -20,11 +20,12 @@ body {
     vertical-align:middle;
 }*/
 
-.div {
+.div1 {
 
     display: table;
     margin: auto;
     vertical-align:middle;
+    text-align:center;
 	
 }
 

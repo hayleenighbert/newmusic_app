@@ -1,41 +1,12 @@
 
-		<form class="form-inline" id="search-bar">
+	<form class="form-inline" role="form" id="search-bar" action="/music/results" method="GET">
 
 		<label for="search">Type an artist, genre, etc...</label>
 	
 		<div class="form-group" style="text-align: center">
 			<input type="text" class="form-control" id="search-bar" placeholder="Search" name="s">
 
-		<button type="submit" class="btn btn-info">Submit</button>
+			<button type="submit" class="btn btn-info">Submit</button>
 
-		</form>
-	</div>
-
-    <script type="underscore/template" id="result">
-      <div class="result">
-        <h1><%=name%> </h1>
-        <ul>
-          <% _.each(artists, function(artist){ %>
-            <li><a href="" class="similar-artist"><%=artist.name%></a> <span>&raquo;</span></li>
-          <% }); %>
-        </ul>
-      </div>
-      <div class="result-pad">
-      </div>
-    </script>
-    <script type="underscore/template" id="artistinfo">
-      <div class="span-8" id="bio">
-        <%=bio%> <% if(bio){ %><a href="<%=bio_url%>">more</a><% } %>
-      </div>
-      <div class="span-12 terms">
-        <p><%= similars%></p>
-      </div>
-      <div class="span-4 last terms">
-        <p>Words in <span>blue</span> are keywords that <%=name%>
-          share(s) with <%= parentname%></p>
-      </div>
-    </script>
-
-</div>
-</div>
-
+		</div>
+	</form>

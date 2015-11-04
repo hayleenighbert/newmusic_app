@@ -7,7 +7,7 @@ router.post('/', function(req, res) {
 	var path = req.body;
 	db.favorite.findOrCreate({
 		where: {
-			api_key: path.api_key,
+			key: path.key,
 			artist: path.artist,
 			song: path.song
 		}
@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
 	db.favorite.findAll({
 		order: 'title ASC'
 	}).then(function(favorites) {
-		res.render('favorite/index', {favorite: favorites});
+		res.render('/profile', {favorite: favorites});
 	});
 });
 

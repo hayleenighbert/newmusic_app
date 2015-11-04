@@ -1,8 +1,8 @@
 var multer = require('multer');
 var upload = multer({ dest: 'uploads/'});
 var express = require('express');
-
-var app = express()
+// var cloudinary = require('cloudinary');
+var app = express();
  
 app.post('/profile', upload.single('avatar'), function (req, res, next) {
   // req.file is the `avatar` file 
