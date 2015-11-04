@@ -7,9 +7,9 @@ router.post('/', function(req, res) {
 	var path = req.body;
 	db.favorite.findOrCreate({
 		where: {
-			imdbId: path.imdbId,
-			year: path.year,
-			title: path.title
+			api_key: path.api_key,
+			artist: path.artist,
+			song: path.song
 		}
 	}).spread(function(favorite, created) {
 		console.log(favorite.get());
