@@ -1,8 +1,27 @@
-<h3>Sign up!</h3>
+<!-- <h3>Sign up!</h3>
 <form method="POST" action="/auth/signup">
 	<input type="text" name="username" class="form-control" placeholder="Name" />
 	<input type="email" name="email" class="form-control" placeholder="E-mail" />
 	<input type="password" name="password" class="form-control" placeholder="Enter your password" />
 	<input type="password" name="password2" class="form-control" placeholder="Re-enter password" />
 	<input type="submit" value="Sign up!" class="btn btn-primary" />
+</form>
+ -->
+<div class="left">
+        <div class="col s12 m3">
+          <div class="card-panel white">
+            <div class="card-content black-text">
+              <span class="card-title">Sign up</span>
+<form action="/auth/signup" method="POST">
+	<div class="input-field"> 
+		<div class="form-group">
+			<span class="help-block"></span>
+			<input type="text" name="username" class="form-control" id="" placeholder="Username">
+			<input type="email" name="email" class="form-control" placeholder="E-mail" />
+			<input type="password" name="password" class="form-control" placeholder="Enter your password" />
+			<input type="password" name="password2" class="form-control" placeholder="Re-enter password" />
+		</div>
+	</div>
+	
+	<button type="submit" value="Sign up" class="btn">Sign up</button>
 </form>

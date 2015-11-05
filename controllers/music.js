@@ -16,6 +16,15 @@ router.get('/results', function(req, res){
         })
     });
 
+router.get('/mood', function(req, res){
+        var searchTerm = req.query.s;
+        request("http://developer.echonest.com/api/v4/artist/search?api_key="+process.env.API_KEY+"&format=json&mood=" + searchTerm, 
+        function (error, response, data){
+            res.render('musicresults', {myData: JSON.parse(data)})
+        })
+    });
+
+
 // router.get('/results', function(req, res){
 //             res.render('musicresults', {myData: chunk})
 // });

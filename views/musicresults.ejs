@@ -8,11 +8,11 @@
 	<% var ID = item.name %><%= item.name %>
 	</div>
 	<%= JSON.stringify(item) %>
-	<div class="row" style="text-align: left">
+	<div class="row" style="text-align: center">
 		<form method="POST" action="/favorite">
 			<input class="name" type="hidden" value="<%-item.name%>" name="name">
 			<input class="bio" type="hidden" value="<%- item.album%>" name="album">
-			<input class="btn btn-info" type="submit" value="Add to Favorites">
+			<input class="btn btn-info" type="submit" value="Add Artist">
 
 <% }) %>
 

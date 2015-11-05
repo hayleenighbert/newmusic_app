@@ -4,18 +4,20 @@ var $ = require('cheerio');
 var db = require("./models");
 var hstore = require('pg-hstore')();
 var pg = require('pg');
+var test = require("./controllers/test.js")
 
 var ejsLayouts = require("express-ejs-layouts");
 app.use(express.static(__dirname + '/static'));
 app.use(ejsLayouts);
 app.set("view engine", "ejs");
 
+
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
 var session = require('express-session');
 app.use(session({
-	secret: "secrets",
+	secret: "secretsarecool",
 	resave: false,
 	saveUninitialized: true
 }));
@@ -75,5 +77,7 @@ app.use("/auth", require("./controllers/auth"));
 app.use("/music", require("./controllers/music"));
 // app.use("/profile", require("./controllers/profile"))
 app.use("/favorite", require("./controllers/favorite"))
+app.use("/test", test)
 
-app.listen(process.env.PORT || 3000)
+// app.listen(process.env.PORT || 3000)
+app.listen(3000);

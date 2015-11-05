@@ -26,9 +26,11 @@ router.get('/', function(req, res) {
 	db.favorite.findAll({
 		order: 'artist ASC'
 	}).then(function(favorites) {
-		res.render('profile', {favorites: favorites});
+		res.render('profile', {favorites: favorites, name: req.currentUser.name});
 	});
 });
+
+
 
 
 // router.get('/:id/tags', function(req, res) {

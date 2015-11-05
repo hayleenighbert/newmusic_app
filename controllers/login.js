@@ -17,7 +17,9 @@ router.get("/", function(req, res) {
 router.get("/profile", function(req, res) {
 	if (req.currentUser) {
 		console.log()
-		res.render("profile");
+		res.render("profile", {
+			currentUser: req.currentUser.name
+		});
 	} else {
 		res.redirect("/favorite")
 	}

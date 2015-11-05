@@ -1,16 +1,46 @@
-<h2>Profile</h2>
+<h2>Hello, <%= name %></h2>
 
-<small>Add/Change Avatar</small>
+<!-- <small>Add/Change Avatar</small>
 	<form action="/" method="POST" enctype="multipart/form-data">
 		<input type="file" name="myFile">
 		<input type="submit">
-	</form><br><br>
+	</form><br><br> -->
 
-<button class="waves-effect waves-light btn-small"><a href="/music">Add new Music</a></button>
+	<form action="/music/mood" method="POST">
+		<h4>How are you feeling today?</h4>
+		<div class="input-field"> 
+			<div class="form-group">
+				<span class="help-block"></span>
+			</div>
+		</div>
+
+	<ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">Happy</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Relaxed</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Excited</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Sad</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Angry</a></li>
+    <li class="divider"></li>
+  		</ul>
 
 
+
+<h3>Saved Artists</h3>
+<button type="button" class="waves-effect waves-light btn"><i class="material-icons left">album</i><a href="/music">Add Artists</a></button>
 <% favorites.forEach(function(item) { %>
-      <h4><%= item.artist %></h4>
+<div class="row">
+	<div class="col s12 m5">
+		<div class="card-panel grey">
+			<span class="white-text"><h5><%= item.artist %></h5>
+			</span>
+		</div>
+	</div>
+</div>
+      
 <% }); %>
 
 <!-- //render on the page
