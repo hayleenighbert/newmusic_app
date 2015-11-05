@@ -24,6 +24,7 @@ body {
 
     display: table;
     margin: auto;
+    opacity: 0.5;
 /*    vertical-align:middle;
     text-align:center;*/
 	
@@ -31,5 +32,16 @@ body {
 
 .container {
   margin: auto;
-  background-color: white;
+  background-color: black;
+  display: inline-block;
+  vertical-align: middle;
+  width: 500px;
+  height: auto;
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+.collapsible {
+  width: 500px;
+  margin-left: 10px;
 }

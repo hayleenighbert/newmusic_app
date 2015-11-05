@@ -1,15 +1,11 @@
-<h2>Hello, <%= name %></h2>
-
 <!-- <small>Add/Change Avatar</small>
 	<form action="/" method="POST" enctype="multipart/form-data">
 		<input type="file" name="myFile">
 		<input type="submit">
 	</form><br><br> -->
 
-<h5>How are you feeling today?</h5>
 
-
-	<ul id='dropdown1'>
+<!-- 	<ul id='dropdown1'>
     <li><a href="/music/mood/happy">Happy</a></li>
     <li class="divider"></li>
     <li><a href="/music/mood/relaxed">Relaxed</a></li>
@@ -20,21 +16,47 @@
     <li class="divider"></li>
     <li><a href="/music/mood/angry">Angry</a></li>
     <li class="divider"></li>
-  		</ul>
+  		</ul> -->
+       <div class="container">
+       <div class="row">
+        <div class="col s12 m8 offset-m2 center-align">
+          <div class="card black darken-1 center-align">
+            <div class="card-content white-text center-align">
+              <span class="card-title"><h1>Hello, <%= name %></h1></span>
+              <h6>How are you feeling today?</h6>
+				<div class="row"><a href="/music/mood/happy"><img src="http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/Emoji-Smiley-01.png" height= "25px"></a>&nbsp;
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+     </div>
 
 
-
-<h3>Saved Artists</h3>
-<button type="button" class="waves-effect waves-light btn"><i class="material-icons left">album</i><a href="/music">Add Artists</a></button>
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header black"><i class="material-icons">filter_drama</i>Saved Artists</div>
+      <div class="collapsible-body black">
+<button type="button" class="waves-effect waves-light btn black"><i class="material-icons left">album</i><a href="/music">Add Artists</a></button>
 <% favorites.forEach(function(item) { %>
 <div class="row">
 	<div class="col s12 m5">
 		<div class="card-panel grey">
-			<span class="white-text"><h5><%= item.artist %></h5>
+			<span class="white-text"><h7><%= item.artist %></h7>
 			</span>
 		</div>
 	</div>
 </div>
-      
-<% }); %>
+<% }); %></p></div>
+    </li>
+    <li>
+      <div class="collapsible-header black"><i class="material-icons">place</i>Saved Albums</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+    <li>
+      <div class="collapsible-header black"><i class="material-icons">whatshot</i>Saved Albums</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+  </ul>
 

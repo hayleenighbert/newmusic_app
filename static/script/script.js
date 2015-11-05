@@ -11,6 +11,10 @@ $(function() {
     slides: [
         { src: "http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/background02.jpg" },
         { src: "http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/background03.jpg" },
+        { src: "http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/background05.jpg" },
+        { src: "http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/background06.jpg" },
+		{ src: "http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/background05.jpg" },
+
     ]
 
 		});
