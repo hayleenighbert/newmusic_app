@@ -7,7 +7,6 @@
 	<% myData.response.artists.forEach(function(item){ %>
 	<% var ID = item.name %><%= item.name %>
 	</div>
-	<%= JSON.stringify(item) %>
 	<div class="row" style="text-align: center">
 		<form method="POST" action="/favorite">
 			<input class="name" type="hidden" value="<%-item.name%>" name="name">
