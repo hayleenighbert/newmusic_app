@@ -1,21 +1,26 @@
-<h2>Profile</h2>
+<!-- <h2>Profile</h2>
 
 <small>Add/Change Avatar</small>
 	<form action="/" method="POST" enctype="multipart/form-data">
 		<input type="file" name="myFile">
 		<input type="submit">
-	</form><br><br>
-
-	<button class="waves-effect waves-light btn-small"><a href="/music">Add new Music</a></button>
+	</form><br><br> -->
 
 
-<% favorite.forEach(function(favorites) { %>
- <div class="container">
-      <div class="row">
-      <h4><%= item.name %></h4>
-    </div>
+	<form class="form-inline" role="form" id="search-bar" action="/music/results" method="GET">
 
- </div>
+		<label for="search">Type in an artist</label>
+	
+		<div class="form-group" style="text-align: center">
+			<input type="text" class="form-control" id="search-bar" placeholder="Search" name="s">
+
+			<button type="submit" class="waves-effect waves-light btn-small">Submit</button>
+
+		</div>
+	</form>
+
+<% favorites.forEach(function(favorite) { %>
+      <h4><%= favorite.artist %></h4>
 <% }); %>
 
 <!-- //render on the page

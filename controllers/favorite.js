@@ -5,16 +5,18 @@ var db = require('../models');
 
 router.post('/', function(req, res) {
 	var path = req.body;
+	console.log(path)
 	db.favorite.findOrCreate({
 		where: {
 			id: path.id,
-			artist: path.artist,
-			album: path.album,
-			song: path.song
+			artist: path.name[0],
+			// album: path.album[0],
+			// song: path.song[0]
 		}
 	}).spread(function(favorite, created) {
 		console.log(favorite.get());
-		res.redirect('/profile');
+		favorite.save()
+		res.redirect('/favorite');
 	});
 
 });
@@ -23,7 +25,7 @@ router.get('/', function(req, res) {
 	db.favorite.findAll({
 		order: 'artist ASC'
 	}).then(function(favorites) {
-		res.render('profile', {favorite: favorites});
+		res.render('profile', {favorites: favorites});
 	});
 });
 

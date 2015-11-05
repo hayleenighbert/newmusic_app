@@ -12,7 +12,7 @@ router.route('/login').get(function(req, res) {
 			} else if (user) {
 				req.session.user = user.id;
 				req.flash("success", "You are logged in");
-				res.redirect('/profile');
+				res.redirect('/favorite');
 			} else {
 				req.flash("danger", "Invalid username or password");
 				res.redirect("/auth/login");
