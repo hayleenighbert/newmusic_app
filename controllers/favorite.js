@@ -6,9 +6,10 @@ var db = require('../models');
 router.post('/', function(req, res) {
 	var path = req.body;
 	console.log(path)
+	console.log("user",req.currentUser)
 	db.favorite.findOrCreate({
 		where: {
-			id: path.id,
+			userId: req.currentUser.id,
 			artist: path.name[0],
 			// album: path.album[0],
 			// song: path.song[0]

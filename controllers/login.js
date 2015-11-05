@@ -19,7 +19,7 @@ router.get("/profile", function(req, res) {
 		console.log()
 		res.render("profile");
 	} else {
-		res.redirect("/")
+		res.redirect("/favorite")
 	}
 });
 
