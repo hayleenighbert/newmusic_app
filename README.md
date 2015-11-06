@@ -1,4 +1,4 @@
-# nu.music
+# nu.notes
 # App for discovering new music
 
 Music profile app to keep track of bands you want to listen to, top new music, events (coming soon), and keeps track of favorites on your profile page.
