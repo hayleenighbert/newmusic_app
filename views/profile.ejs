@@ -24,7 +24,13 @@
             <div class="card-content white-text center-align">
               <span class="card-title"><h1>Hello, <%= name %></h1></span>
               <h6>How are you feeling today?</h6>
-				<div class="row"><a href="/music/mood/happy"><img src="http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/Emoji-Smiley-01.png" height= "25px"></a>&nbsp;
+				<div class="row"><a href="/music/mood/happy"><img src="http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/Emoji-Smiley-01.png" alt="happy" height= "25px"></a>&nbsp;
+				<a href="/music/mood/love"><img src="http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/Emoji-Smiley-07.png" height="25px" alt="In love"></a>&nbsp;
+				<a href="/music/mood/relaxed"><img src="http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/Emoji-Smiley-18.png" height="25px" alt="Relaxed"></a>&nbsp;
+				<a href="/music/mood/sad"><img src="http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/Emoji-Smiley-20.png" height="25px" alt="Sad"></a>&nbsp;
+				<a href="/music/mood/angry"><img src="http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/Emoji-Smiley-35.png" height="25px" alt="Angry"></a>&nbsp;
+				<a href="/music/mood/chill"><img src="http://photo-blog.hayleenighbertphotography.com/wp-content/uploads/2015/11/Emoji-Smiley-41.png" height="25px" alt="Chill"></a>
+
 
             </div>
           </div>
@@ -51,12 +57,15 @@
 <% }); %></p></div>
     </li>
     <li>
-      <div class="collapsible-header black"><i class="material-icons">place</i>Saved Albums</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-    </li>
-    <li>
-      <div class="collapsible-header black"><i class="material-icons">whatshot</i>Saved Albums</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-header black"><i class="material-icons">place</i>Pitchfork Top Albums</div>
+      <div class="collapsible-body black"><p>
+		<h7><% urls.forEach(function(url, index){%>
+		<a href="http://pitchfork.com<%= url %>"><%= info[index] %></a></h7>
+	</p>
+
+<% }) %>
+</span>
+</div></p></div>
     </li>
   </ul>
 

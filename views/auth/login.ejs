@@ -1,54 +1,31 @@
-<!-- <h3>Login</h3>
-<form method="POST" action="/auth/login">
-	<input type="email" name="email" placeholder="Email address" class="form-control" />
-	<input type="password" name="password" placeholder="Password" class="form-control" />
-	<input type="submit" value="Log in!" class="btn btn-primary" />
-</form> -->
+<div class="container">
+       <div class="row">
+        <div class="col s12 m8 offset-m2 center-align">
+          <div class="card black darken-1 center-align">
+            <div class="card-content white-text center-align">
 
-<!-- <nav>
-	<div class="nav-wrapper blue-grey darken-3">
-		<a href="#" class="brand-logo center">nu.notes</a>
-		<ul id="nav-mobile" class="left hide-on-med-and-down">
-		</ul>
-	</div>
-</nav> -->
+              <span class="card-title">Log in</span>
 
-<!-- <div class="row">
-        <div class="col s12 m3">
-          <div class="card-panel teal lighten-2">
-            <div class="card-content black-text">
-              <span class="card-title">nu.notes</span>
-              <p>Share music with friends</p>
-            </div>
-            <div class="card-action">
-              <a href="#">About</a>
-              <a href="#">Fork on Git</a>
+              <h6>Sign in to your nu.notes music profile</h6>
+
+              <div class="input-field col s6 center-align">
+
+                <form action="login" method="POST" class="form" href="/login">
+                <legend>Log in</legend>
+                  <div class="input-field"> 
+                    <div class="form-group">
+                    <span class="help-block"></span>
+                      <input type="email" name="email" placeholder="Email" class="form-control">        
+                      <input type="password" name="password" placeholder="Password" class="form-control">
+                  </div>
+                </div>
+  
+        <button type="submit" action="/login" class="btn">Log in</button>
+</form>
+
             </div>
           </div>
         </div>
-      </div> -->
-
-
-<center>
-<div class="container">
-<div class="valign-wrapper">
-      <div class="center-align">
-        <div class="input-field col s6 center-align">
-
-    <form method="POST" class="form" href="/login" text-align="center">
-
-	  <input type="email" name="email" placeholder="Email" class="form-control" />
-		<input type="password" name="password" placeholder="Password" class="form-control" />
-		<input type="submit" value="Log in" action="/login" class="waves-effect waves-teal btn-flat" />
-		
-    </form>
-
-    <a href="/signup" class="waves-effect waves-teal btn-flat">Signup</a>
-
-
-		</div>
-	</div>
+      </div>
+    </div>
 </div>
-</div>
-
-<!-- <div class="card-panel hoverable"> Find out more</div> -->

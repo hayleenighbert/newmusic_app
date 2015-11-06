@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var db = require('../models');
+var $ = require('cheerio')
+
 
 router.post('/', function(req, res) {
 	var path = req.body;
@@ -26,11 +28,51 @@ router.get('/', function(req, res) {
 	db.favorite.findAll({
 		order: 'artist ASC'
 	}).then(function(favorites) {
-		res.render('profile', {favorites: favorites, name: req.currentUser.name});
+	var linkArray=[]
+	var textArray=[]
+  request('http://pitchfork.com/reviews/best/albums/', function (err, resp, html){
+    if(!err && resp.statusCode == 200) {
+      var parsedHTML = $.load(html)
+      parsedHTML('.bnm-list li div.info a').map(function(i, headline){
+        var text = $(headline).attr('href')
+        if(!(text)) return
+        linkArray.push(text)
+      })
+      parsedHTML('.bnm-list li div.info a').map(function(i, headline){
+        var text = $(headline).text()
+        if(!(text)) return
+        textArray.push(text)
+      })
+      console.log(linkArray)
+      var linksAndHeadlines = {urls: linkArray, info: textArray}
+      res.render('profile', {urls: linkArray, info: textArray, favorites: favorites, name: req.currentUser.name})
+    }
+  	})
 	});
 });
 
-
+router.get('/url', function(req, res) {
+	var linkArray=[]
+	var textArray=[]
+  request('http://pitchfork.com/reviews/best/albums/', function (err, resp, html){
+    if(!err && resp.statusCode == 200) {
+      var parsedHTML = $.load(html)
+      parsedHTML('.bnm-list li div.info a').map(function(i, headline){
+        var text = $(headline).attr('href')
+        if(!(text)) return
+        linkArray.push(text)
+      })
+      parsedHTML('.bnm-list li div.info a').map(function(i, headline){
+        var text = $(headline).text()
+        if(!(text)) return
+        textArray.push(text)
+      })
+      console.log(linkArray)
+      var linksAndHeadlines = {urls: linkArray, info: textArray}
+      res.render('profile', {urls: linkArray, info: textArray, favorites: favorites, name: req.currentUser.name})
+    }
+  })
+});
 
 
 // router.get('/:id/tags', function(req, res) {
