@@ -4,24 +4,24 @@
           <div class="card black darken-1 center-align">
             <div class="card-content white-text center-align">
 
-              <span class="card-title">Log in</span>
+              <span class="card-title">Sign up for a new nu.notes account</span>
 
               <h6>Sign in to your nu.notes music profile</h6>
 
-              <div class="input-field col s6 center-align">
+              <div class = "valign wrapper">
 
-                <form action="login" method="POST" class="form" href="/login">
-                <legend>Log in</legend>
-                  <div class="input-field"> 
-                    <div class="form-group">
-                    <span class="help-block"></span>
-                      <input type="email" name="email" placeholder="Email" class="form-control">        
-                      <input type="password" name="password" placeholder="Password" class="form-control">
+                <div class="input-field col s6 center-align">
+
+                  <form action="login" method="POST" class="form center-align" href="/login" id="form">
+                    <div class="input-field center-align"> 
+                      <div class="form-group center-align">
+                        <input type="email" name="email" placeholder="Email" class="form-control center-align">        
+                        <input type="password" name="password" placeholder="Password" class="form-control center-align">
                   </div>
                 </div>
   
-        <button type="submit" action="/login" class="btn">Log in</button>
-</form>
+                      <button type="submit" action="/login" class="btn">Log in</button>
+                  </form>
 
             </div>
           </div>

@@ -45,3 +45,29 @@ body {
   width: 500px;
   margin-left: 10px;
 }
+
+
+.formgroup {
+  margin: auto;
+  vertical-align: middle;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card form {
+    max-width: 100%; 
+}
+
+#form {
+  width: 50%;
+  vertical-align: middle;
+  margin-left: 25%;
+  position: relative;
+}
+

@@ -4,19 +4,15 @@
           <div class="card black darken-1 center-align">
             <div class="card-content white-text center-align">
               <span class="card-title"><h1>Top Results</h1></span><p>
-	<% myData.response.artists.forEach(function(item){ %>
-	<h4><% var ID = item.name %><%= item.name %>
-	</div>
-    <div class="row" style="text-align:center">
-
-	<div class="row" style="text-align: center">
-		<form method="POST" action="/favorite">
-			<input class="name" type="hidden" value="<%-item.name%>" name="name">
-			<input class="btn btn-info grey" type="submit" value="Add Artist">
-
-</h4>
+	           <% myData.response.artists.forEach(function(item){ %>
+                <% var ID = item.name %><%= item.name %>
+	       </div>
+                <div class="row" style="text-align:center">
+		          <form method="POST" action="/favorite">
+			     <input class="name" type="hidden" value="<%-item.name%>" name="name">
+			     <input class="btn btn-info grey" type="submit" value="Add Artist">
 <% }) %>
-</div>
+        </div>
 	</div>
 </div>
 </form>
