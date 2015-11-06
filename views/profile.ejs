@@ -45,9 +45,9 @@
     </li>
     <li>
       <div class="collapsible-header black"><i class="material-icons">album</i>Pitchfork Top Albums</div>
-      <div class="collapsible-body black"><p>
-		<h7><% urls.forEach(function(url, index){%></h7>
-		<a href="http://pitchfork.com<%= url %>"><%= info[index] %></a></h7>
+      <div class="collapsible-body black">
+
+      <% urls.forEach(function(url, index){%><a href="http://pitchfork.com<%= url %>"><%= info[index] %></a>
 	</p>
 
 <% }) %>

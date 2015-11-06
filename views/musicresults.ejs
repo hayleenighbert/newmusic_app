@@ -3,14 +3,16 @@
         <div class="col s12 m8 offset-m2 center-align">
           <div class="card black darken-1 center-align">
             <div class="card-content white-text center-align">
-              <span class="card-title"><h1>Top Results</h1></span><p>
-	           <% myData.response.artists.forEach(function(item){ %>
+              <span class="card-title"><h2>Top Results</h2></span><p>
+	           <h5><% myData.response.artists.forEach(function(item){ %>
                 <% var ID = item.name %><%= item.name %>
-	       </div>
                 <div class="row" style="text-align:center">
-		          <form method="POST" action="/favorite">
-			     <input class="name" type="hidden" value="<%-item.name%>" name="name">
-			     <input class="btn btn-info grey" type="submit" value="Add Artist">
+                  <form method="POST" action="/favorite">
+                 <input class="name" type="hidden" value="<%-item.name%>" name="name"><br>
+                 <input class="btn btn-info grey" type="submit" value="Add Artist">
+	       </div>
+
+			     </h5>
 <% }) %>
         </div>
 	</div>

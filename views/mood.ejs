@@ -14,17 +14,21 @@
 		<button type="submit" class="btn">Sad</button>
 		<button type="submit" class="btn">Angry</button>
 	</form> -->
-	<div class="row" style="text-align: center">
-	<% myData.response.mood.forEach(function(item){ %>
+	<div class="container">
+		<div class="row" style="text-align: center">
+		<% myData.response.mood.forEach(function(item){ %>
 	<% var ID = item.name %><%= item.name %>
-	</div>
 	<%= JSON.stringify(item) %>
 	<div class="row" style="text-align: center">
-		<form method="POST" action="/favorite">
-			<input class="name" type="hidden" value="<%-item.name%>" name="name">
+		<form method="POST" action="/favorite"><h6>
+			<input class="name" type="hidden" value="<%-item.name%>" name="name"></h6>
 			<input class="btn btn-info" type="submit" value="Mood">
 
 <% }) %>
+
+	</form>
+	</div>
+	</div>
 
 	</div>
 </div>
