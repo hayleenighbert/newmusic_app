@@ -48,27 +48,7 @@ app.use(function(request, result, next) {
 	next();
 })
 
-app.get('/url', function(req, res){
-  request('http://pitchfork.com/reviews/best/albums/', function (err, resp, html){
-    if(!err && resp.statusCode == 200) {
-      var parsedHTML = $.load(html)
-      var linkArray = []
-      parsedHTML('.bnm-list li div.info a').map(function(i, headline){
-        var text = $(headline).attr('href')
-        if(!(text)) return
-        linkArray.push(text)
-      })
-      var textArray = []
-      parsedHTML('.bnm-list li div.info a').map(function(i, headline){
-        var text = $(headline).text()
-        if(!(text)) return
-        textArray.push(text)
-      })
-      var linksAndHeadlines = {url: linkArray, info: textArray}
-      res.render('index', {url: linkArray, info: textArray})
-    }
-  })
-})
+
 
 
 // Include our controllers
@@ -79,5 +59,5 @@ app.use("/music", require("./controllers/music"));
 app.use("/favorite", require("./controllers/favorite"))
 app.use("/test", test)
 
-// app.listen(process.env.PORT || 3000)
-app.listen(3000);
+app.listen(process.env.PORT || 3000)
+// app.listen(3000);
