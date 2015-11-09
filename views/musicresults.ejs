@@ -1,20 +1,23 @@
-       <div class="container">
-       <div class="row">
-        <div class="col s12 m8 offset-m2 center-align">
-          <div class="card black darken-1 center-align">
-            <div class="card-content white-text center-align">
-              <span class="card-title"><h2>Top Results</h2></span><p>
-	           <h5><% myData.response.artists.forEach(function(item){ %>
-                <% var ID = item.name %><%= item.name %>
-                <div class="row" style="text-align:center">
-                  <form method="POST" action="/favorite">
-                 <input class="name" type="hidden" value="<%-item.name%>" name="name"><br>
-                 <input class="btn btn-info grey" type="submit" value="Add Artist">
-	       </div>
+	<div class="container">
+	<div class="row" style="text-align: center">
+		<h4><i class="material-icons">queue_music</i>Results</h4>
+	</div>
 
-			     </h5>
+	<div class="row" style="text-align: center">
+	<% myData.response.artists.forEach(function(item){ %>
+	<% var ID = item.name %><%= item.name %>
+	</div>
+	<%= JSON.stringify(item) %>
+	<div class="row" style="text-align: left">
+		<form method="POST" action="/favorite">
+			<input class="name" type="hidden" value="<%-item.name%>" name="name">
+			<input class="bio" type="hidden" value="<%- item.album%>" name="album">
+			<input class="btn btn-info" type="submit" value="Add to Favorites">
+
 <% }) %>
-        </div>
+
 	</div>
 </div>
 </form>
+
+

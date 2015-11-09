@@ -5,6 +5,8 @@ var db = require("./models");
 var hstore = require('pg-hstore')();
 var pg = require('pg');
 var test = require("./controllers/test.js")
+// var upload = multer({ dest: './uploads/' });
+// var cloudinary = require('cloudinary');
 
 var ejsLayouts = require("express-ejs-layouts");
 app.use(express.static(__dirname + '/static'));
@@ -48,16 +50,18 @@ app.use(function(request, result, next) {
 	next();
 })
 
+//in post route
+// app.post('/', upload.single('myFile'), function(req, res) {
+//   res.send(req.file);
+// });
 
 
-
-// Include our controllers
 app.use("/", require("./controllers/login"));
 app.use("/auth", require("./controllers/auth"));
 app.use("/music", require("./controllers/music"));
 // app.use("/profile", require("./controllers/profile"))
 app.use("/favorite", require("./controllers/favorite"))
-app.use("/test", test)
+// app.use("/test", test)
 
-app.listen(process.env.PORT || 3000)
-// app.listen(3000);
+// app.listen(process.env.PORT || 3000)
+app.listen(3000);

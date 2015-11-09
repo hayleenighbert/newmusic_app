@@ -26,13 +26,14 @@ router.get('/mood/:mood', function(req, res){
         })
     });
 
-// router.get('/', function(req,res){
-//         var searchTerm = req.params.song;
-//         request("http://developer.echonest.com/api/v4/artist/songs?api_key="+process.env.API_KEY+"&format=json&start=0&results=5" + searchTerm)
-//         function (error, response, data) {
-//             res.render('musicresults', {myData: JSON.parse(data)})
-//         }
-// });
+router.get('/', function(req,res){
+        var searchTerm = req.params.song;
+        console.log("http://developer.echonest.com/api/v4/artist/songs?api_key="+process.env.API_KEY+"&format=json&start=0&results=5" + searchTerm)
+        request("http://developer.echonest.com/api/v4/artist/songs?api_key="+process.env.API_KEY+"&format=json&start=0&results=5" + searchTerm,
+        function (error, response, data) {
+            res.render('musicresults', {myData: JSON.parse(data)})
+        })
+});
 
 
 

@@ -64,6 +64,15 @@ body {
     max-width: 100%; 
 }
 
+.page-footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:#000000;
+    height: 50px;
+    opacity: 0.8;
+}
+
 #form {
   width: 50%;
   vertical-align: middle;
