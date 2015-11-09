@@ -21,23 +21,11 @@ app.get('/', function(req, res) {
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.post('/', upload.single('myFile'), function(req, res) {
-  cloudinary.uploader.upload(req.file.path, function(result) {
-    res.send(result);
-  });
-  // res.send(req.file);
-});
-
-app.get('/image/:url', function(req, res) {
-  res.render('image', {url: cloudinary.url(req.params.url)});
-});
-
-var session = require('express-session');
-app.use(session({
-	secret: "secretsarecool",
-	resave: false,
-	saveUninitialized: true
-}));
+app.use(function(request, result, next) {
+	result.locals.currentUser = request.currentUser;
+	result.locals.alerts = request.flash();
+	next();
+})
 
 app.use(function(req, res, next) {
 	if(req.session.user) {
@@ -56,14 +44,27 @@ app.use(function(req, res, next) {
 	}
 });
 
+
+app.post('/', upload.single('myFile'), function(req, res) {
+  cloudinary.uploader.upload(req.file.path, function(result) {
+    res.send(result);
+  });
+  // res.send(req.file);
+});
+
+app.get('/image/:url', function(req, res) {
+  res.render('image', {url: cloudinary.url(req.params.url)});
+});
+
+var session = require('express-session');
+app.use(session({
+	secret: "secretsarecool",
+	resave: false,
+	saveUninitialized: true
+}));
+
 var flash = require('connect-flash');
 app.use(flash());
-
-app.use(function(request, result, next) {
-	result.locals.currentUser = request.currentUser;
-	result.locals.alerts = request.flash();
-	next();
-})
 
 //in post route
 // app.post('/', upload.single('myFile'), function(req, res) {
