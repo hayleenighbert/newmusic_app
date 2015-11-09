@@ -4,9 +4,9 @@ var $ = require('cheerio');
 var db = require("./models");
 var hstore = require('pg-hstore')();
 var pg = require('pg');
-var test = require("./controllers/test.js")
-var cloudinary = require('cloudinary');
+// var test = require("./controllers/test.js")
 var multer  = require('multer');
+var cloudinary = require('cloudinary');
 var upload = multer({ dest: './uploads/' });
 
 var ejsLayouts = require("express-ejs-layouts");
