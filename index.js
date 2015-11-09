@@ -5,8 +5,8 @@ var db = require("./models");
 var hstore = require('pg-hstore')();
 var pg = require('pg');
 var test = require("./controllers/test.js")
-// var upload = multer({ dest: './uploads/' });
-// var cloudinary = require('cloudinary');
+var upload = multer({ dest: './uploads/' });
+var cloudinary = require('cloudinary');
 
 var ejsLayouts = require("express-ejs-layouts");
 app.use(express.static(__dirname + '/static'));
@@ -16,6 +16,17 @@ app.set("view engine", "ejs");
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post('/', upload.single('myFile'), function(req, res) {
+  cloudinary.uploader.upload(req.file.path, function(result) {
+    res.send(result);
+  });
+  // res.send(req.file);
+});
+
+app.get('/image/:url', function(req, res) {
+  res.render('image', {url: cloudinary.url(req.params.url)});
+});
 
 var session = require('express-session');
 app.use(session({

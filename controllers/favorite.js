@@ -13,8 +13,8 @@ router.post('/', function(req, res) {
 		where: {
 			userId: req.currentUser.id,
 			artist: path.name[0],
-			// album: path.album[0],
-			// song: path.song[0]
+			album: path.album[0],
+			song: path.song[0]
 		}
 	}).spread(function(favorite, created) {
 		console.log(favorite.get());
