@@ -5,14 +5,18 @@ var db = require("./models");
 var hstore = require('pg-hstore')();
 var pg = require('pg');
 var test = require("./controllers/test.js")
-var upload = multer({ dest: './uploads/' });
 var cloudinary = require('cloudinary');
+var multer  = require('multer');
+var upload = multer({ dest: './uploads/' });
 
 var ejsLayouts = require("express-ejs-layouts");
 app.use(express.static(__dirname + '/static'));
 app.use(ejsLayouts);
 app.set("view engine", "ejs");
 
+app.get('/', function(req, res) {
+  res.render('index');
+});
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
